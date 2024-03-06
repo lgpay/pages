@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>今日诗词</title>
+  <style>
+    body {
+      background-color: #eef7f2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-size: 50px;
+    }
+    #poem_info {
+      text-align: center;
+      color: gray;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    /* 移动设备样式 */
+    @media (max-width: 768px) {
+      body {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  <div id="poem_sentence"></div>
+  <div id="poem_info"></div>
+  <script type="text/javascript">
+    jinrishici.load(function(result) {
+      var sentence = document.querySelector("#poem_sentence");
+      var info = document.querySelector("#poem_info");
+      sentence.innerHTML = result.data.content;
+      info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》';
+    });
+  </script>
+</body>
+</html>
