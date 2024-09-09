@@ -4,8 +4,13 @@
   <meta charset="UTF-8">
   <title>今日诗词</title>
   <style>
+    :root {
+      --bg-color: #eef7f2;
+      --text-color: #333;
+    }
     body {
-      background-color: #eef7f2;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -18,16 +23,38 @@
       text-align: center;
       color: gray;
       position: fixed;
-      bottom: 0;
+      bottom: 60px;
       width: 100%;
       margin-bottom: 20px;
       font-size: 16px;
     }
-
+    footer {
+      text-align: center;
+      color: var(--text-color);
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+      background-color: var(--bg-color);
+      padding: 10px 0;
+    }
+    footer a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
     /* 移动设备样式 */
     @media (max-width: 768px) {
       body {
         font-size: 30px;
+      }
+      #poem_info {
+        font-size: 14px;
+      }
+      footer {
+        font-size: 12px;
       }
     }
   </style>
@@ -44,5 +71,10 @@
       info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》';
     });
   </script>
+
+  <!-- 底部版权信息 -->
+  <footer>
+    <p>© 2024 <a href="https://3w.pm" target="_blank">3w.pm</a> 由 <a href="https://www.freehostia.com/" target="_blank">Freehostia</a> 提供服务</p>
+  </footer>
 </body>
 </html>
