@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>信用卡信息表</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table id="creditCardTable">
+        <thead>
+            <tr>
+                <th>银行</th>
+                <th>卡号</th>
+                <th>名称</th>
+                <th>账单日</th>
+                <th>还款日</th>
+                <th>免息期</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- 数据将动态加载 -->
+        </tbody>
+    </table>
+
+    <script>
+        async function fetchCreditCards() {
+            try {
+                const response = await fetch('YOUR_WORKERS_ENDPOINT_URL');
+                const cards = await response.json();
+                
+                const tableBody = document.getElementById('tableBody');
+                tableBody.innerHTML = ''; // 清空现有内容
+
+                cards.forEach(card => {
+                    const row = `
+                        <tr>
+                            <td>${card.bank}</td>
+                            <td>${card.card_number}</td>
+                            <td>${card.name || '未命名'}</td>
+                            <td>${card.billing_day}</td>
+                            <td>${card.repayment_day}</td>
+                            <td>${card.grace_period || 10}</td>
+                        </tr>
+                    `;
+                    tableBody.innerHTML += row;
+                });
+            } catch (error) {
+                console.error('获取信用卡信息失败:', error);
+            }
+        }
+
+        // 页面加载时获取数据
+        fetchCreditCards();
+    </script>
+</body>
+</html>
