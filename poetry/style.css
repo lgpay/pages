@@ -67,7 +67,8 @@ body {
   margin: 0;
   color: var(--ink);
   font-size: clamp(30px, 5vw, 58px);
-  font-weight: 500;
+  font-family: "STXingkai", "Xingkai", "华文行楷", "STKaiti", "KaiTi", "楷体", "DFKai-SB", "FZKai-Z03", serif;
+  font-weight: normal;
   letter-spacing: 0.16em;
   line-height: 1.8;
 }
