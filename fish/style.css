@@ -1,11 +1,19 @@
 body {
   background-color: #42a1c6;
+  margin: 0;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
 /* Franklin's Container */
 .fish {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 150px;
   height: 100px;
+  z-index: 2;
+  will-change: transform;
   -webkit-animation: swim 3s infinite;
           animation: swim 3s infinite; 
 }
@@ -59,7 +67,7 @@ body {
 
 /* Bubbles */
 .bubbles {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 5;
   margin-right: 50px;
@@ -68,50 +76,51 @@ body {
   opacity: .50;
   width: 40px;
   height: 40px;
+  will-change: transform;
   -webkit-animation: up 4s infinite;
           animation: up 4s infinite;
 }
 
 .bubble-2 {
-  left: 350px;
+  left: 22vw;
   -webkit-animation: up 2s infinite;
           animation: up 2s infinite;
 }
 
 .bubble-3 {
-  left: 750px;
+  left: 43vw;
   opacity: .30;
   -webkit-animation: up 5s infinite;
           animation: up 5s infinite;
 }
 
 .bubble-4 {
-  left: 1150px;
+  left: 66vw;
   -webkit-animation: up 6s infinite;
           animation: up 6s infinite;
 }
 
 .bubble-5 {
-  left: 50px;
+  left: 8vw;
   -webkit-animation: up 5s infinite;
           animation: up 5s infinite;
 }
 
 .bubble-6 {
-  left: 300px;
+  left: 31vw;
   opacity: .30;
   -webkit-animation: up 3s infinite;
           animation: up 3s infinite;
 }
 
 .bubble-7 {
-  left: 670px;
+  left: 56vw;
   -webkit-animation: up 4s infinite;
           animation: up 4s infinite;
 }
 
 .bubble-8 {
-  left: 1050px;
+  left: 82vw;
   opacity: .30;
   -webkit-animation: up 3s infinite;
           animation: up 3s infinite;
@@ -123,16 +132,16 @@ body {
     transform: translateY(-50px) translateX(0) rotate(30deg);
   }
   25% { 
-    transform: translateY(50px) translateX(250px) rotate(20deg);
+    transform: translateY(35vh) translateX(25vw) rotate(20deg);
   }
   50% {
-    transform: translateY(100px) translateX(500px);
+    transform: translateY(65vh) translateX(50vw);
   }
   75% {
-    transform: translateY(50px) translateX(850px) rotate(-20deg);
+    transform: translateY(30vh) translateX(75vw) rotate(-20deg);
   }
   100% {
-    transform: translateY(-170px) translateX(1200px) rotate(-40deg);
+    transform: translateY(-10vh) translateX(calc(100vw - 190px)) rotate(-40deg);
   }
 }
 @keyframes swim {
@@ -140,27 +149,27 @@ body {
     transform: translateY(-50px) translateX(0) rotate(30deg);
   }
   25% { 
-    transform: translateY(50px) translateX(250px) rotate(20deg);
+    transform: translateY(35vh) translateX(25vw) rotate(20deg);
   }
   50% {
-    transform: translateY(100px) translateX(500px);
+    transform: translateY(65vh) translateX(50vw);
   }
   75% {
-    transform: translateY(50px) translateX(850px) rotate(-20deg);
+    transform: translateY(30vh) translateX(75vw) rotate(-20deg);
   }
   100% {
-    transform: translateY(-170px) translateX(1200px) rotate(-40deg);
+    transform: translateY(-10vh) translateX(calc(100vw - 190px)) rotate(-40deg);
   }
 }
 
 /* Bubbles Animation */
 @-webkit-keyframes up {
   100% {
-    transform: translateY(-800px);
+    transform: translateY(-110vh);
   }
 }
 @keyframes up {
   100% {
-    transform: translateY(-800px);
+    transform: translateY(-110vh);
   }
 }
