@@ -14,8 +14,8 @@ body {
   height: 100px;
   z-index: 2;
   will-change: transform;
-  -webkit-animation: swim 3s infinite;
-          animation: swim 3s infinite; 
+  -webkit-animation: swim 8s infinite;
+          animation: swim 8s infinite;
 }
 
 /* Franklin */
