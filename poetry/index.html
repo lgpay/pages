@@ -16,7 +16,7 @@
     jinrishici.load(function(result) {
       var sentence = document.querySelector("#poem_sentence");
       var info = document.querySelector("#poem_info");
-      sentence.textContent = result.data.content;
+      sentence.textContent = result.data.content.replace(/([，。])/g, '$1\n');
       info.textContent = '【' + result.data.origin.dynasty + '】' + result.data.origin.author + '《' + result.data.origin.title + '》';
     });
   </script>

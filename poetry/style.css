@@ -71,6 +71,7 @@ body {
   font-weight: normal;
   letter-spacing: 0.16em;
   line-height: 1.8;
+  white-space: pre-line;
 }
 
 #poem_info {
